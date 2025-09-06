@@ -1801,7 +1801,7 @@
         "explorerAccountLink": "https://explorer.reaction.network/address/{0}"
     },
     "satoshicash": {
-        "name": "S/atoshi/cash",
+        "name": "Satoshicash",
         "canonicalName": "Satoshicash",
         "symbol": "SCASH",
         "family": "satoshicash",
