@@ -15,7 +15,7 @@ public class AutoMapperProfile : Profile
     public AutoMapperProfile()
     {
         // Fix for Automapper 11 which chokes on recursive objects such as JToken
-        CreateMap<JToken, JToken>().ConvertUsing(x=> x);
+        CreateMap<JToken, JToken>().ConvertUsing(x => x);
 
         //////////////////////
         // outgoing mappings
@@ -47,8 +47,10 @@ public class AutoMapperProfile : Profile
             .ForMember(dest => dest.Market, opt => opt.MapFrom(src => src.Market))
             .ForMember(dest => dest.Twitter, opt => opt.MapFrom(src => src.Twitter))
             .ForMember(dest => dest.Discord, opt => opt.MapFrom(src => src.Discord))
-            .ForMember(dest => dest.Telegram, opt => opt.MapFrom(src => src.Telegram))
+            .ForMember(dest => dest.DiscordColor, opt => opt.MapFrom(src => src.DiscordColor))
             .ForMember(dest => dest.Github, opt => opt.MapFrom(src => src.Github))
+            .ForMember(dest => dest.MiningPoolStats, opt => opt.MapFrom(src => src.MiningPoolStats))
+            .ForMember(dest => dest.Telegram, opt => opt.MapFrom(src => src.Telegram))
             .ForMember(dest => dest.Algorithm, opt => opt.MapFrom(src => src.GetAlgorithmName()));
 
         CreateMap<PoolConfig, Api.Responses.PoolInfo>()
