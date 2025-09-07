@@ -28,13 +28,15 @@ CREATE TABLE blocks
     type TEXT NULL,
     confirmationprogress FLOAT NOT NULL DEFAULT 0,
 	effort FLOAT NULL,
-        minereffort FLOAT NULL,
+    minereffort FLOAT NULL,
 	transactionconfirmationdata TEXT NOT NULL,
 	miner TEXT NULL,
 	reward decimal(28,12) NULL,
     source TEXT NULL,
     hash TEXT NULL,
-	created TIMESTAMPTZ NOT NULL
+	created TIMESTAMPTZ NOT NULL,
+	useragent TEXT NULL,
+	worker TEXT NULL
 );
 
 CREATE INDEX IDX_BLOCKS_POOL_BLOCK_STATUS on blocks(poolid, blockheight, status);
