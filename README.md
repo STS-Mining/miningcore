@@ -13,7 +13,7 @@
 - Session management for purging DDoS/flood initiated zombie workers
 - Payment processing
 - Banning System
-- Live Stats [API](https://github.com/oliverw/miningcore/wiki/API) on Port 4000
+- Live Stats [API](https://github.com/STS-Mining/miningcore/wiki/API) on Port 4000
 - WebSocket streaming of notable events like Blocks found, Blocks unlocked, Payments and more
 - POW (proof-of-work) & POS (proof-of-stake) support
 - Detailed per-pool logging to console & filesystem
