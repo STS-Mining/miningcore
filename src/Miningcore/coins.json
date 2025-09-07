@@ -1220,6 +1220,36 @@
         "explorerAccountLink": "https://explorer.hypra.network/address/{0}",
         "ethasher": "ethashb3"
     },
+    "interchained": {
+        "name": "Interchained",
+        "symbol": "INT",
+        "family": "bitcoin",
+        "website": "https://interchained.org/",
+        "twitter": "",
+        "telegram": "https://t.me/Interchained_ITC",
+        "discord": "",
+        "github": "https://github.com/interchained/interchained",
+        "discordcolor": 2051459,
+        "miningpoolstats": "https://miningpoolstats.stream/ico/interchained.png",
+        "coinbaseHasher": {
+            "hash": "sha256d"
+        },
+        "headerHasher": {
+            "hash": "yespower"
+        },
+        "blockHasher": {
+            "hash": "reverse",
+            "args": [
+                {
+                    "hash": "sha256d"
+                }
+            ]
+        },
+        "shareMultiplier": 65536,
+        "explorerBlockLink": "https://explorer.interchained.org/block/$hash$",
+        "explorerTxLink": "https://explorer.interchained.org/tx/{0}",
+        "explorerAccountLink": "https://explorer.interchained.org/address/{0}"
+    },
     "kaspa": {
         "name": "Kaspa",
         "canonicalName": "Kaspa",
