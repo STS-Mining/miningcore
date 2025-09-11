@@ -1951,7 +1951,7 @@
         "discord": "https://discord.gg/ybRF4dny5B",
         "discordcolor": 5533624,
         "github": "https://github.com/trumpowppc/trumpow",
-        "miningpoolstats": "",
+        "miningpoolstats": "https://miningpoolstats.stream/ico/trumpow.png",
         "coinbaseHasher": {
             "hash": "sha256d"
         },
