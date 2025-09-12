@@ -1312,3 +1312,15 @@ void yespowerARWN_hash(const char* input, char* output, uint32_t len)
     };
     yespower_tls(input, len, &yespower_1_0_ARWN, (yespower_binary_t *)output);
 }
+
+void yespowerADVC_hash(const char* input, char* output, uint32_t len)
+{
+    yespower_params_t yespower_1_0_ADVC = {
+        .version = YESPOWER_1_0,
+        .N = 2048,
+        .r = 32,
+        .pers = (const uint8_t *)"Let the quest begin",
+        .perslen = 19
+    };
+    yespower_tls(input, len, &yespower_1_0_ADVC, (yespower_binary_t *)output);
+}
