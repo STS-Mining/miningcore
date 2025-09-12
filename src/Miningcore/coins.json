@@ -75,37 +75,42 @@
         "explorerTxLink": "https://explorer.aipowergrid.io/tx/{0}",
         "explorerAccountLink": "https://explorer.aipowergrid.io/address/{0}"
     },
-    "adventurecoin": {
+        "adventurecoin": {
         "name": "AdventureCoin",
         "canonicalName": "AdventureCoin",
         "symbol": "ADVC",
         "family": "bitcoin",
+        "algorithm": "yespoweradvc",
         "website": "https://www.adventurecoin.quest/",
         "github": "https://github.com/AdventureCoin-ADVC/AdventureCoin",
         "explorer": "https://explorer.adventurecoin.quest/#/",
         "twitter": "https://x.com/AdventureCoinAD",
         "telegram": "https://t.me/AdventureCoinADVC",
         "discord": "https://discord.gg/xNJJXqKp3T",
-        "coinbaseHasher": {
-            "hash": "sha256d"
-        },
-        "headerHasher": {
-            "hash": "yespoweradvc"
-        },
+
+        "coinbaseHasher": { "hash": "sha256d" },
+        "headerHasher": { "hash": "yespoweradvc" },
         "blockHasher": {
             "hash": "reverse",
             "args": [
-                {
-                    "hash": "sha256d"
-                }
+                { "hash": "sha256d" }
             ]
         },
+
         "hasDeveloper": true,
         "shareMultiplier": 65536,
-        "coinbaseMinConfimations": 30,
+        "coinbaseMinConfirmations": 30,
+
+        "GBTArgs": [
+            {
+                "capabilities": [ "coinbasetxn", "workid", "coinbase/append" ],
+                "rules": [ "segwit" ]
+            }
+        ],
+
         "explorerBlockLink": "https://explorer.adventurecoin.quest/#/block/$hash$",
-        "explorerTxLink": "https://explorer.adventurecoin.quest/#/transaction/{0}",
-        "explorerAccountLink": "https://explorer.adventurecoin.quest/#/address/{0}"
+        "explorerTxLink": "https://explorer.adventurecoin.quest/#/transaction/$hash$",
+        "explorerAccountLink": "https://explorer.adventurecoin.quest/#/address/$address$"
     },
     "alephium": {
         "name": "Alephium",
