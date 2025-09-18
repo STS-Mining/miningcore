@@ -15,6 +15,7 @@ public abstract class BlockNotification
 public class BlockFoundNotification : BlockNotification
 {
     public string Miner { get; set; }
+    public string Worker { get; set; }
     public string MinerExplorerLink { get; set; }
     public string Source { get; set; }
 }
@@ -39,6 +40,7 @@ public class BlockUnlockedNotification : BlockNotification
     public decimal Reward { get; set; }
     public double? Effort { get; set; }
     public string Miner { get; set; }
+    public string Worker { get; set; }
     public string ExplorerLink { get; set; }
     public string MinerExplorerLink { get; set; }
 }

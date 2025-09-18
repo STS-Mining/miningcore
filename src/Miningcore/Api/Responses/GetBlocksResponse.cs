@@ -15,6 +15,7 @@ public class Block
     public string InfoLink { get; set; }
     public string Hash { get; set; }
     public string Miner { get; set; }
+    public string Worker { get; set; }
     public string Source { get; set; }
     public DateTime Created { get; set; }
 }

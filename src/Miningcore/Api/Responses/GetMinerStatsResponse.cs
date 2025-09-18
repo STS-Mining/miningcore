@@ -3,6 +3,7 @@ namespace Miningcore.Api.Responses;
 public class MinerPerformanceStats
 {
     public string Miner { get; set; }
+    public string Worker { get; set; }
     public double Hashrate { get; set; }
     public double SharesPerSecond { get; set; }
 }
