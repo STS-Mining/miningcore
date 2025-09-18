@@ -12,6 +12,9 @@ public class BlockchainStats
     public int ConnectedPeers { get; set; }
     public string NodeVersion { get; set; } = "Unknown";
     public string RewardType { get; set; }
+
+    public double? AverageBlockTime { get; set; }  // Average time between blocks in seconds
+    public double? TimeToNextBlock { get; set; }   // Estimated time to next block for pool hashrate in seconds
 }
 
 public interface IExtraNonceProvider
