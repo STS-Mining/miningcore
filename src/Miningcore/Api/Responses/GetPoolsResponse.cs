@@ -94,8 +94,6 @@ public partial class PoolInfo
     public decimal BlockReward { get; set; }
     public DateTime? LastPoolBlockTime { get; set; }
     public double PoolEffort { get; set; }
-
-    public double? BlockTime { get; set; }
 }
 
 public class GetPoolsResponse
