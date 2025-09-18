@@ -270,7 +270,7 @@ public class EthereumJobManager : JobManagerBase<EthereumJob>
             var latestBlockTimestamp = blockInfo.Timestamp;
             var latestBlockDifficulty = blockInfo.Difficulty.IntegralFromHex<ulong>();
 
-            var sampleSize = (ulong)100; // Changed from 300 to 100 blocks for blocktime calculation
+            var sampleSize = (ulong)300;
             var sampleBlockNumber = latestBlockHeight - sampleSize;
             var sampleBlockResults = await rpc.ExecuteAsync<Block>(logger, coin.RpcMethodPrefix + EC.GetBlockByNumber, ct, new[] { (object)sampleBlockNumber.ToStringHexWithPrefix(), true });
             var sampleBlockTimestamp = sampleBlockResults.Response.Timestamp;
@@ -280,40 +280,12 @@ public class EthereumJobManager : JobManagerBase<EthereumJob>
 
             BlockchainStats.NetworkHashrate = blockTime > 0 ? networkHashrate : 0;
             BlockchainStats.ConnectedPeers = peerCount;
-
-            BlockchainStats.AverageBlockTime = blockTime > 0 ? blockTime : null;
-
-            // Calculate time to next block for pool hashrate
-            if (blockTime > 0 && BlockchainStats.NetworkHashrate > 0)
-            {
-                var poolHashrate = currentJob?.BlockTemplate != null ? GetPoolHashrate() : 0;
-                if (poolHashrate > 0)
-                {
-                    var poolNetworkRatio = poolHashrate / BlockchainStats.NetworkHashrate;
-                    BlockchainStats.TimeToNextBlock = blockTime / poolNetworkRatio;
-                }
-                else
-                {
-                    BlockchainStats.TimeToNextBlock = null;
-                }
-            }
-            else
-            {
-                BlockchainStats.TimeToNextBlock = null;
-            }
         }
 
         catch (Exception e)
         {
             logger.Error(e);
         }
-    }
-
-    private double GetPoolHashrate()
-    {
-        // This would need to be implemented based on your pool's hashrate tracking
-        // For now, return 0 as placeholder - you'll need to integrate with your pool stats
-        return 0;
     }
 
     private async Task<bool> SubmitBlockAsync(Share share, string fullNonceHex, string headerHash, string mixHash)

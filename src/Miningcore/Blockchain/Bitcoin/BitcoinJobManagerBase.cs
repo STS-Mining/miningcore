@@ -226,8 +226,7 @@ public abstract class BitcoinJobManagerBase<TJob> : JobManagerBase<TJob>
             var results = await rpc.ExecuteBatchAsync(logger, ct,
                 new RpcRequest(BitcoinCommands.GetMiningInfo),
                 new RpcRequest(BitcoinCommands.GetNetworkInfo),
-                new RpcRequest(BitcoinCommands.GetNetworkHashPS),
-                new RpcRequest(BitcoinCommands.GetBlockchainInfo) // Added blockchain info request
+                new RpcRequest(BitcoinCommands.GetNetworkHashPS)
             );
 
             if (results.Any(x => x.Error != null))
@@ -240,7 +239,6 @@ public abstract class BitcoinJobManagerBase<TJob> : JobManagerBase<TJob>
 
             var miningInfoResponse = results[0].Response.ToObject<MiningInfo>();
             var networkInfoResponse = results[1].Response.ToObject<NetworkInfo>();
-            var blockchainInfoResponse = results[3].Response.ToObject<BlockchainInfo>();
 
             BlockchainStats.NetworkHashrate = miningInfoResponse.NetworkHashps;
             BlockchainStats.ConnectedPeers = networkInfoResponse.Connections;
@@ -248,83 +246,12 @@ public abstract class BitcoinJobManagerBase<TJob> : JobManagerBase<TJob>
             // Fall back to alternative RPC if coin does not report Network HPS (Digibyte)
             if (BlockchainStats.NetworkHashrate == 0 && results[2].Error == null)
                 BlockchainStats.NetworkHashrate = results[2].Response.Value<double>();
-
-            if (blockchainInfoResponse != null)
-            {
-                try
-                {
-                    var latestBlockHeight = blockchainInfoResponse.Blocks;
-                    var sampleSize = 100;
-                    var sampleBlockHeight = Math.Max(0, (int)latestBlockHeight - sampleSize);
-
-                    // Get latest and sample blocks
-                    var latestBlockRequest = new RpcRequest(BitcoinCommands.GetBlockHash, new object[] { latestBlockHeight });
-                    var sampleBlockRequest = new RpcRequest(BitcoinCommands.GetBlockHash, new object[] { sampleBlockHeight });
-
-                    var blockHashResults = await rpc.ExecuteBatchAsync(logger, ct, latestBlockRequest, sampleBlockRequest);
-
-                    if (blockHashResults.All(x => x.Error == null))
-                    {
-                        var latestBlockHash = blockHashResults[0].Response.ToObject<string>();
-                        var sampleBlockHash = blockHashResults[1].Response.ToObject<string>();
-
-                        var latestBlockInfoRequest = new RpcRequest(BitcoinCommands.GetBlock, new object[] { latestBlockHash });
-                        var sampleBlockInfoRequest = new RpcRequest(BitcoinCommands.GetBlock, new object[] { sampleBlockHash });
-
-                        var blockInfoResults = await rpc.ExecuteBatchAsync(logger, ct, latestBlockInfoRequest, sampleBlockInfoRequest);
-
-                        if (blockInfoResults.All(x => x.Error == null))
-                        {
-                            var latestBlock = blockInfoResults[0].Response.ToObject<DaemonResponses.Block>();
-                            var sampleBlock = blockInfoResults[1].Response.ToObject<DaemonResponses.Block>();
-
-                            if (latestBlock?.Time != null && sampleBlock?.Time != null)
-                            {
-                                var timeDiff = latestBlock.Time.Value - sampleBlock.Time.Value;
-                                var blockTime = (double)timeDiff / sampleSize;
-
-                                BlockchainStats.AverageBlockTime = blockTime > 0 ? blockTime : null;
-
-                                // Calculate time to next block for pool hashrate
-                                if (blockTime > 0 && BlockchainStats.NetworkHashrate > 0)
-                                {
-                                    var poolHashrate = GetPoolHashrate();
-                                    if (poolHashrate > 0)
-                                    {
-                                        var poolNetworkRatio = poolHashrate / BlockchainStats.NetworkHashrate;
-                                        BlockchainStats.TimeToNextBlock = blockTime / poolNetworkRatio;
-                                    }
-                                    else
-                                    {
-                                        BlockchainStats.TimeToNextBlock = null;
-                                    }
-                                }
-                                else
-                                {
-                                    BlockchainStats.TimeToNextBlock = null;
-                                }
-                            }
-                        }
-                    }
-                }
-                catch (Exception ex)
-                {
-                    logger.Debug(() => $"Error calculating blocktime: {ex.Message}");
-                }
-            }
         }
 
         catch (Exception e)
         {
             logger.Error(e);
         }
-    }
-
-    protected virtual double GetPoolHashrate()
-    {
-        // This would need to be implemented based on your pool's hashrate tracking
-        // For now, return 0 as placeholder - you'll need to integrate with your pool stats
-        return 0;
     }
 
     protected record SubmitResult(bool Accepted, string CoinbaseTx);
