@@ -21,9 +21,9 @@ public class BlockRepository : IBlockRepository
 
         const string query =
             @"INSERT INTO blocks(poolid, blockheight, networkdifficulty, status, type, transactionconfirmationdata,
-                miner, reward, effort, minereffort, confirmationprogress, source, hash, created, worker, useragent)
+                miner, reward, effort, minereffort, confirmationprogress, source, hash, created)
             VALUES(@poolid, @blockheight, @networkdifficulty, @status, @type, @transactionconfirmationdata,
-                @miner, @reward, @effort, @minereffort, @confirmationprogress, @source, @hash, @created, @worker, @useragent,)";
+                @miner, @reward, @effort, @minereffort, @confirmationprogress, @source, @hash, @created)";
 
         await con.ExecuteAsync(query, mapped, tx);
     }
@@ -85,7 +85,7 @@ public class BlockRepository : IBlockRepository
         return (await con.QueryAsync<Entities.Block>(new CommandDefinition(query, new
         {
             poolId,
-            address,
+	    address,
             status = status.Select(x => x.ToString().ToLower()).ToArray(),
             offset = page * pageSize,
             pageSize
