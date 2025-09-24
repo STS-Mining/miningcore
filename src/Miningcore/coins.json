@@ -2404,6 +2404,7 @@
             ]
         },
         "shareMultiplier": 65536,
+        "hasFounderFee": true,
         "explorerBlockLink": "http://explorer.yentencoin.info/block/$height$",
         "explorerTxLink": "http://explorer.yentencoin.info/transaction/{0}",
         "explorerAccountLink": "http://explorer.yentencoin.info/address/{0}"
