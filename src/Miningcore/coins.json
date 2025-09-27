@@ -1411,6 +1411,37 @@
         "explorerTxLink": "https://chainz.cryptoid.info/lcc/tx.dws?{0}.htm",
         "explorerAccountLink": "https://chainz.cryptoid.info/lcc/address.dws?{0}.htm"
     },
+    "litecoin-cash-minotaurx": {
+        "name": "Litecoin Cash",
+        "canonicalName": "Litecoin-Cash",
+        "symbol": "LCC",
+        "family": "bitcoin",
+        "website": "https://litecoinca.sh/",
+        "market": "https://coinmarketcap.com/currencies/litecoin-cash",
+        "twitter": "https://twitter.com/litecoincash",
+        "telegram": "",
+        "discord": "https://discordapp.com/invite/F2nZXnW",
+        "discordcolor": 2349868,
+        "miningpoolstats": "https://miningpoolstats.stream/ico/litecoincash.png",
+        "github": "https://github.com/litecoincash-project/litecoincash",
+        "coinbaseHasher": {
+            "hash": "sha256d"
+        },
+        "headerHasher": {
+            "hash": "minotaurx"
+        },
+        "blockHasher": {
+            "hash": "reverse",
+            "args": [
+                {
+                    "hash": "sha256d"
+                }
+            ]
+        },
+        "explorerBlockLink": "https://chainz.cryptoid.info/lcc/block.dws?$height$.htm",
+        "explorerTxLink": "https://chainz.cryptoid.info/lcc/tx.dws?{0}.htm",
+        "explorerAccountLink": "https://chainz.cryptoid.info/lcc/address.dws?{0}.htm"
+    },
     "magpiecoin": {
         "name": "MagPieCoin",
         "canonicalName": "MagPieCoin",
@@ -1449,7 +1480,7 @@
         "symbol": "MAZA",
         "family": "bitcoin",
         "website": "http://www.mazacoin.org/",
-        "market": "https://freiexchange.com/",
+        "market": "https://app.exbitron.com/exchange/?market=MAZA-USDT",
         "twitter": "https://twitter.com/MazaCoin",
         "telegram": "https://t.me/mazatribe",
         "discord": "https://discord.com/invite/qzd9PnzN3v",
@@ -1461,6 +1492,37 @@
         },
         "headerHasher": {
             "hash": "sha256d"
+        },
+        "blockHasher": {
+            "hash": "reverse",
+            "args": [
+                {
+                    "hash": "sha256d"
+                }
+            ]
+        },
+        "explorerBlockLink": "https://mazacha.in/block/$hash$",
+        "explorerTxLink": "https://mazacha.in/tx/{0}",
+        "explorerAccountLink": "https://mazacha.in/address/{0}"
+    },
+    "maza-minotaurx": {
+        "name": "Maza",
+        "canonicalName": "Maza",
+        "symbol": "MAZA",
+        "family": "bitcoin",
+        "website": "http://www.mazacoin.org/",
+        "market": "https://app.exbitron.com/exchange/?market=MAZA-USDT",
+        "twitter": "https://twitter.com/MazaCoin",
+        "telegram": "https://t.me/mazatribe",
+        "discord": "https://discord.com/invite/qzd9PnzN3v",
+        "github": "https://github.com/MazaCoin/maza",
+        "discordcolor": 9849600,
+        "miningpoolstats": "https://miningpoolstats.stream/ico/mazacoin.png",
+        "coinbaseHasher": {
+            "hash": "sha256d"
+        },
+        "headerHasher": {
+            "hash": "minotaurx"
         },
         "blockHasher": {
             "hash": "reverse",
