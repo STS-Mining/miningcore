@@ -566,6 +566,38 @@
         "rpcMethodPrefix": "ctxc",
         "ethasher": "ethash"
     },
+    "crionic": {
+        "name": "Crionic",
+        "canonicalName": "Crionic",
+        "symbol": "CRNC",
+        "family": "bitcoin",
+        "website": "https://coin.crionic.org/",
+        "github": "https://github.com/diabaths/Crionic-Coin",
+        "twitter": "",
+        "market": "https://coinpaprika.com/coin/crnc-crionic",
+        "discord": "https://discord.com/invite/SKDkjcJTKM",
+        "discordcolor": 329776,
+        "miningpoolstats": "https://miningpoolstats.stream/ico/crionic.png",
+        "coinbaseHasher": {
+            "hash": "sha256d"
+        },
+        "headerHasher": {
+            "hash": "yespowerltncg"
+        },
+        "blockHasher": {
+            "hash": "reverse",
+            "args": [
+                {
+                    "hash": "sha256d"
+                }
+            ]
+        },
+        "shareMultiplier": 65536,
+        "coinbaseMinConfimations": 110,
+        "explorerBlockLink": "https://explorer.crionic.org/block/$height$",
+        "explorerTxLink": "https://explorer.crionic.org/tx/{0}",
+        "explorerAccountLink": "https://explorer.crionic.org/address/{0}"
+    },
     "dash": {
         "name": "Dash",
         "canonicalName": "Dash",
