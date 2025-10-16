@@ -209,6 +209,38 @@
         "explorerTxLink": "https://www.blockchain.com/btc/tx/{0}",
         "explorerAccountLink": "https://www.blockchain.com/btc/address/{0}"
     },
+    "bitcoinii": {
+        "name": "Bitcoin II",
+        "canonicalName": "Bitcoin II",
+        "symbol": "BTC",
+        "family": "bitcoin",
+        "website": "https://bitcoin-ii.org/",
+        "market": "https://www.coingecko.com/en/coins/bitcoinii",
+        "twitter": "https://x.com/BitcoinIIOrg",
+        "telegram": "",
+        "github": "https://github.com/BitcoinII-Dev/BitcoinII",
+        "discord": "https://discord.com/invite/zUSkQHNVyG",
+        "discordcolor": 16233728,
+        "miningpoolstats": "https://miningpoolstats.stream/ico/bitcoinii.png",
+        "coinbaseHasher": {
+            "hash": "sha256d"
+        },
+        "headerHasher": {
+            "hash": "sha256d"
+        },
+        "blockHasher": {
+            "hash": "reverse",
+            "args": [
+                {
+                    "hash": "sha256d"
+                }
+            ]
+        },
+        "coinbaseIgnoreAuxFlags": true,
+        "explorerBlockLink": "https://bitcoinii.space/api/block/$hash$",
+        "explorerTxLink": "https://bitcoinii.space/api/tx/{0}",
+        "explorerAccountLink": "https://bitcoinii.space/api/address/{0}"
+    },
     "bitcoin-cash": {
         "name": "Bitcoin Cash",
         "canonicalName": "Bitcoin-Cash",
