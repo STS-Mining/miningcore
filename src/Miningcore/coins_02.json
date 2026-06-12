@@ -1,0 +1,179 @@
+{ 
+  "babacoin": {
+      "name": "Babacoin",
+      "canonicalName": "Babacoin",
+      "symbol": "BBC",
+      "family": "bitcoin",
+      "website": "https://www.babacoin.network/",
+      "github": "https://github.com/babacoinbbc/babacoin",
+      "market": "https://www.coingecko.com/en/coins/babacoin",
+      "twitter": "https://twitter.com/babacoinbbc",
+      "telegram": "https://t.me/babacoinbbc",
+      "discord": "https://discord.com/invite/j2S83xqGcJ",
+      "discordcolor": 13608217,
+      "miningpoolstats": "https://miningpoolstats.stream/ico/babacoin.png",
+      "coinbaseHasher": {
+          "hash": "sha256d"
+      },
+      "headerHasher": {
+          "hash": "ghostrider"
+      },
+      "blockHasher": {
+          "hash": "reverse",
+          "args": [
+              {
+                  "hash": "sha256d"
+              }
+          ]
+      },
+      "hasFounderFee": true,
+      "hasMasterNodes": true,
+      "hasSmartNodes": true,
+      "foundersRewardAddress": ["BLbWwABzjJGsSeibe6oJvTK5aEq8Sx7rU9"],
+      "shareMultiplier": 65536,
+      "explorerBlockLink": "https://explorer.babacoin.network/block/$height$",
+      "explorerTxLink": "https://explorer.babacoin.network/tx/{0}",
+      "explorerAccountLink": "https://explorer.babacoin.network/address/{0}"
+  },
+  "bitoreum": {
+      "name": "Bitoreum",
+      "canonicalName": "Bitoreum",
+      "symbol": "BTRM",
+      "family": "bitcoin",
+      "website": "https://bitoreum.cc/",
+      "market": "https://www.coingecko.com/en/coins/bitoreum",
+      "twitter": "https://twitter.com/bitoreum",
+      "discord": "https://discord.gg/SarVf8NcKQ",
+      "discordcolor": 15874618,
+      "miningpoolstats": "https://miningpoolstats.stream/ico/bitoreum.png",
+      "github": "https://github.com/Nikovash/bitoreum",
+      "coinbaseHasher": {
+          "hash": "sha256d"
+      },
+      "headerHasher": {
+          "hash": "ghostrider"
+      },
+      "blockHasher": {
+          "hash": "reverse",
+          "args": [
+              {
+                  "hash": "sha256d"
+              }
+          ]
+      },
+      "hasFounderFee": true,
+      "hasMasterNodes": true,
+      "hasSmartNodes": true,
+      "foundersRewardAddress": ["BanxgMPcMpXnuWQ2ogfQqEkwwVtjhAhXBR"],
+      "shareMultiplier": 65536,
+      "explorerBlockLink": "https://explorer.bitoreum.cc/block/$hash$",
+      "explorerTxLink": "https://explorer.bitoreum.cc/tx/{0}",
+      "explorerAccountLink": "https://explorer.bitoreum.cc/address/{0}"
+  },
+    "fewbit": {
+        "name": "FewBit",
+        "canonicalName": "FewBit",
+        "symbol": "FBIT",
+        "family": "bitcoin",
+        "website": "https://info.fewbit.online/",
+        "market": "https://trade.nestex.one/spot/FBIT_USDT",
+        "twitter": "https://x.com/FewBit_Network",
+        "telegram": "",
+        "discord": "https://discord.com/invite/aHZs9fndQc",
+        "discordcolor": 16766720,
+        "miningpoolstats": "https://miningpoolstats.stream/ico/fewbit.png",
+        "github": "https://github.com/fewbit-network/Core-Wallet",
+        "coinbaseHasher": {
+            "hash": "sha256d"
+        },
+        "headerHasher": {
+            "hash": "ghostrider"
+        },
+        "blockHasher": {
+            "hash": "reverse",
+            "args": [
+                {
+                    "hash": "sha256d"
+                }
+            ]
+        },
+        "hasFounderFee": true,
+        "hasMasterNodes": true,
+        "hasSmartNodes": true,
+        "shareMultiplier": 65536,
+        "explorerBlockLink": "https://fewbit.online/block/$hash$",
+        "explorerTxLink": "https://fewbit.online/tx/{0}",
+        "explorerAccountLink": "https://fewbit.online/address/{0}"
+    },
+    "raptoreum": {
+        "name": "Raptoreum",
+        "canonicalName": "Raptoreum",
+        "symbol": "RTM",
+        "family": "bitcoin",
+        "website": "https://raptoreum.com/",
+        "market": "https://coinmarketcap.com/currencies/raptoreum",
+        "twitter": "https://twitter.com/raptoreum",
+        "telegram": "https://t.me/raptoreum",
+        "discord": "https://discord.gg/2T8xG7e",
+        "github": "https://github.com/Raptor3um/Raptoreum",
+        "discordcolor": 11944485,
+        "miningpoolstats": "https://miningpoolstats.stream/ico/raptoreum.png",
+        "coinbaseHasher": {
+            "hash": "sha256d"
+        },
+        "headerHasher": {
+            "hash": "ghostrider"
+        },
+        "blockHasher": {
+            "hash": "reverse",
+            "args": [
+                {
+                    "hash": "sha256d"
+                }
+            ]
+        },
+        "hasFounderFee": true,
+        "hasMasterNodes": true,
+        "hasSmartNodes": true,
+        "foundersRewardAddress": ["RTtyQU6DoSuNWetT4WUem5qXP5jNYGpwat"],
+        "shareMultiplier": 65536,
+        "explorerBlockLink": "https://explorer.raptoreum.com/block-height/$height$",
+        "explorerTxLink": "https://explorer.raptoreum.com/tx/{0}",
+        "explorerAccountLink": "https://explorer.raptoreum.com/address/{0}"
+    },
+    "yerbas": {
+        "name": "Yerbas",
+        "canonicalName": "Yerbas",
+        "symbol": "YERB",
+        "family": "bitcoin",
+        "website": "https://yerbas.org/",
+        "market": "https://trade.nestex.one/spot/YERB_USDT",
+        "twitter": "https://twitter.com/Yerbas_Endeavor",
+        "telegram": "",
+        "discord": "https://discord.com/invite/XGEp2cKSKF",
+        "discordcolor": 3066993,
+        "miningpoolstats": "https://miningpoolstats.stream/ico/yerbas.png",
+        "github": "https://github.com/The-Yerbas-Endeavor/yerbas",
+        "coinbaseHasher": {
+            "hash": "sha256d"
+        },
+        "headerHasher": {
+            "hash": "ghostrider"
+        },
+        "blockHasher": {
+            "hash": "reverse",
+            "args": [
+                {
+                    "hash": "sha256d"
+                }
+            ]
+        },
+        "hasFounderFee": true,
+        "hasMasterNodes": true,
+        "hasSmartNodes": true,
+        "shareMultiplier": 65536,
+        "explorerBlockLink": "https://explorer.yerbas.org/block/$height$",
+        "explorerTxLink": "https://explorer.yerbas.org/tx/{0}",
+        "explorerAccountLink": "https://explorer.yerbas.org/address/{0}"
+    },
+}
